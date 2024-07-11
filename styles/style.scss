@@ -1,0 +1,562 @@
+/* 清空格式 */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+// 首頁設計 //
+
+div#content {
+    header {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: #fff;
+        box-shadow: 3px 3px 5px 1px #757474;
+
+        div.logo {
+            display: flex;
+            align-items: center;
+            flex-grow: 5;
+            flex-shrink: 1;
+            flex-basis: 400px;
+            // flex: 5 1 400px;  上三段的簡寫
+            margin-left: 2rem;
+
+            img {
+                width: 6vw;
+                height: 6vw;
+            }
+
+            h1 {
+                font-size: 3vw;
+            }
+        }
+
+        nav {
+            flex: 2 1 400px;
+
+            ul {
+                display: flex;
+                list-style-type: none;
+                justify-content: space-around;
+
+                li {
+                    a {
+                        color: #09777d;
+                        ;
+                        text-decoration: none;
+                        font-size: 1.3rem;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+
+
+    main {
+        section.backImage {
+            min-height: 90vh;
+            width: 100%;
+            background-image: url("../Pictures/pexels-photo-416676.jpeg");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            z-index: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+
+            div.filter {
+                background-color: rgba(0, 0, 0, 0.2);
+                width: 100%;
+                min-height: 90vh;
+                position: absolute;
+                top: 0;
+                z-index: -1;
+            }
+
+            h3 {
+                font-size: 3.5rem;
+                line-height: 5rem;
+                color: white;
+                margin: 2rem 0rem;
+            }
+
+            button.start {
+                background-color: #3bf0e5;
+                padding: 0.75rem 1.5rem;
+                font-size: 1.5rem;
+                color: white;
+                border: none;
+                border-radius: 1rem;
+                cursor: pointer;
+            }
+        }
+    }
+
+
+    section.second {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        h2 {
+            font-size: 2rem;
+            margin: 2rem 0rem;
+        }
+
+        section.cards {
+            display: flex;
+            // border: 2px solid red;
+            width: 80%;
+            flex-wrap: wrap;
+            //在網頁中為height(固定高度)，手機版則沒有高度限制，因此修改為min-height(動態高度)使手機版也能正常顯示
+            // height: 80vh;
+            min-height: 80vh;
+
+            div.card {
+                // border: 2px solid blue;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                padding: 1rem;
+                flex: 1 1 300px;
+
+                div.image-container {
+                    overflow: hidden;
+                    width: 15vw;
+                    height: 15vw;
+                    border-radius: 50%;
+
+                    img {
+                        width: 15vw;
+                        height: 15vw;
+                        border-radius: 50%;
+                        // margin: 1rem 0rem;
+                        transition: all 0.2s;
+
+                        &:hover {
+                            transform: scale(1.2);
+                        }
+                    }
+                }
+
+                h4 {
+                    font-size: 2rem;
+                    margin: 1rem 0rem;
+                }
+
+                p {
+                    font-size: 1.25rem;
+                }
+
+                a {
+                    text-decoration: none;
+                    padding: 1rem 1.5rem;
+                    background-color: #09777d;
+                    color: white;
+                    font-size: 1.25rem;
+                    margin: 1rem 0rem;
+                }
+            }
+        }
+    }
+
+
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 40vh;
+        justify-content: space-around;
+        background-color: rgb(207, 207, 207);
+
+        div.logo {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 6vw;
+                height: 6vw;
+            }
+
+            h1 {
+                font-size: 3vw;
+            }
+        }
+
+        nav {
+            width: 30%;
+
+            ul {
+                display: flex;
+                list-style-type: none;
+                width: 100%;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                li {
+                    flex-basis: 80px;
+                    line-height: 30px;
+
+                    a {
+                        color: black;
+                        text-decoration: none;
+                        font-size: 1.35rem;
+                    }
+                }
+            }
+        }
+
+        section.links {
+            margin-top: 1rem;
+
+            a {
+                margin: 0rem 1rem;
+                color: white;
+                font-weight: 600;
+
+                img {
+                    width: 5vw;
+                    height: 5vw;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 550px) {
+    div#content {
+        header {
+            div.logo {
+                margin-left: 1rem;
+
+                img {
+                    width: 15vw;
+                    height: 15vw;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+        }
+
+        footer {
+            div.logo {
+                img {
+                    width: 15vw;
+                    height: 15vw;
+                }
+
+                h1 {
+                    font-size: 2rem;
+                }
+            }
+
+            section.links {
+                margin-top: 1rem;
+
+                a {
+                    img {
+                        width: 10vw;
+                        height: 10vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        section.second {
+            section.cards {
+                div.card {
+                    img {
+                        width: 40vw;
+                        height: 40vw;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 關於我們
+// 會員登入
+.login {
+    // 背景加圖 透明點
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .formbg {
+        width: 35%;
+        height: 70vh;
+        box-shadow: 0px 0px 2px black;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+
+        h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin: 1.5rem 0 1.5rem 0;
+        }
+
+        .in_acc,
+        .in_pass {
+            width: 20vw;
+            height: 5vh;
+            border-radius: 50px;
+            background: #eee;
+            border: 1px dotted #ccc;
+            background-image: url(../Pictures/ico_mail.png);
+            background-repeat: no-repeat;
+            background-position: 10px;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+
+        .in_S {
+            width: 22vw;
+            height: 5vh;
+            color: #fff;
+            background-color: #09777d;
+            border: none;
+            border-radius: 50px;
+            margin-top: 3vh;
+        }
+    }
+}
+
+// 聯絡我們
+.contact {
+    // 背景加圖 透明點
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+    .formbg {
+        width: 70vw;
+        height: 75vh;
+        box-shadow: 0px 0px 2px black;
+        display: flex;
+        justify-content: flex-end;
+        padding: 40px 50px 0 0;
+        margin-top: 50px;
+
+        h3 {
+            font-size: 1.5rem;
+            text-align: left;
+        }
+
+        p {
+            .in_U,
+            .in_P,
+            .in_E {
+                width: 20vw;
+                height: 5vh;
+                border-radius: 50px;
+                background: #eee;
+                border: 1px dotted #ccc;
+                background-image: url(../Pictures/ico_mail.png);
+                background-repeat: no-repeat;
+                background-position: 10px;
+                padding-left: 40px;
+                margin-top: 20px;
+            }
+        }
+
+        textarea {
+            width: 21vw;
+            background: #eee;
+            border: 1px dotted #ccc;
+            border-radius: 30px;
+            padding: 15px 0 0 25px;
+            margin-top: 20px;
+        }
+
+        .in_S {
+            width: 22vw;
+            height: 5vh;
+            color: #fff;
+            background-color: #09777d;
+            border: none;
+            border-radius: 50px;
+            margin-top: 3vh;
+        }
+    }
+}
+
+
+// scrollbar css
+// width
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+// Track
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+// Handle
+::-webkit-scrollbar-thumb {
+    background: #09777d;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
